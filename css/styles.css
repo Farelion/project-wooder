@@ -258,7 +258,7 @@ body {
     flex-direction: column;
     width: 55%;
     height: 95vh;
-    background-image: url("/img/left.png");
+    background-image: url("img/left.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
