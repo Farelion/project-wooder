@@ -23,6 +23,99 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+    #hero .nav .nav-mobile {
+      display: none; }
+      @media (max-width: 1250px) {
+        #hero .nav .nav-mobile {
+          display: block; }
+          #hero .nav .nav-mobile.on {
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            display: block;
+            position: absolute; } }
+      #hero .nav .nav-mobile .menu-toggle {
+        width: 40px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        cursor: pointer;
+        z-index: 3; }
+        #hero .nav .nav-mobile .menu-toggle.on .one {
+          transform: rotate(45deg) translate(7px, 7px);
+          background-color: black; }
+        #hero .nav .nav-mobile .menu-toggle.on .two {
+          opacity: 0; }
+        #hero .nav .nav-mobile .menu-toggle.on .three {
+          transform: rotate(-45deg) translate(8px, -10px);
+          background-color: black; }
+        #hero .nav .nav-mobile .menu-toggle .one,
+        #hero .nav .nav-mobile .menu-toggle .two,
+        #hero .nav .nav-mobile .menu-toggle .three {
+          width: 100%;
+          height: 5px;
+          background: white;
+          margin: 6px auto;
+          backface-visibility: hidden;
+          transition-duration: 0.3s; }
+      #hero .nav .nav-mobile nav div {
+        content: " ";
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translate3d(0, 0, 0);
+        transition: 0.5s ease; }
+        #hero .nav .nav-mobile nav div.hidden {
+          left: 0;
+          top: 0;
+          transform: translate3d(-100%, 0, 0);
+          transition: 0.5s ease;
+          margin-left: 0;
+          z-index: -1; }
+      #hero .nav .nav-mobile nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        list-style: none;
+        padding: 0 55px 0 55px;
+        text-align: center;
+        position: absolute;
+        transform: translate3d(0, 0, 0);
+        transition: 0.5s ease;
+        background-color: white;
+        height: 100vh; }
+        #hero .nav .nav-mobile nav ul.hidden {
+          left: 0;
+          top: 0;
+          transform: translate3d(-100%, 0, 0);
+          transition: 0.5s ease;
+          margin-left: 0; }
+        #hero .nav .nav-mobile nav ul li:hover a {
+          transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
+          background-position: 100% 100%; }
+        #hero .nav .nav-mobile nav ul li a {
+          line-height: 1.5;
+          width: 100%;
+          display: block;
+          transition-duration: 0.5s;
+          text-decoration: none;
+          color: black;
+          font-size: 3em;
+          font-weight: bold;
+          text-transform: uppercase;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: all 0.2s ease-out;
+          background-image: linear-gradient(0deg, #BEA67C, #BEA67C 50%, black 50%);
+          background-size: 100% 200%;
+          background-position: 0% 0%; }
     #hero .nav .nav-center {
       z-index: 1;
       width: 100%;
@@ -39,6 +132,9 @@ body {
         text-transform: uppercase;
         margin-left: 295px;
         position: relative; }
+        @media (max-width: 1024px) {
+          #hero .nav .nav-center .nav-logo {
+            margin-left: 0; } }
         #hero .nav .nav-center .nav-logo span {
           user-select: none; }
           #hero .nav .nav-center .nav-logo span:after {
@@ -53,6 +149,9 @@ body {
       #hero .nav .nav-center .nav-menu {
         z-index: 2;
         width: 30%; }
+        @media (max-width: 1250px) {
+          #hero .nav .nav-center .nav-menu {
+            display: none; } }
         #hero .nav .nav-center .nav-menu ul {
           padding: 0; }
           #hero .nav .nav-center .nav-menu ul li {
@@ -128,15 +227,39 @@ body {
     flex-wrap: wrap;
     height: 100%;
     width: 100%; }
+    @media (max-width: 970px) {
+      #hero .main {
+        background-image: url("/project-wooder/img/left.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative; } }
+    @media (max-width: 970px) {
+      #hero .main:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        border-left: 50px solid rgba(169, 148, 110, 0.08);
+        border-top: 50px solid rgba(169, 148, 110, 0.08);
+        width: 130px;
+        height: 55px; } }
     #hero .main .center-column-wrapper {
       height: 100%;
       width: 100%;
       position: absolute;
       display: flex;
+      align-self: center;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       z-index: 1; }
+      @media (max-width: 1024px) {
+        #hero .main .center-column-wrapper .center-column {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; } }
       #hero .main .center-column-wrapper .center-column .cc-big-text {
         color: #BEA67C;
         font-size: 100px;
@@ -309,6 +432,9 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       position: relative; }
+      @media (max-width: 970px) {
+        #hero .main .left-column {
+          display: none; } }
       #hero .main .left-column:after {
         content: '';
         position: absolute;
@@ -330,6 +456,9 @@ body {
           color: #BEA67C;
           position: absolute;
           left: 40%; }
+          @media screen and (max-width: 1400px) {
+            #hero .main .left-column .lc-wrapper .lc-dots-wrapper {
+              left: 25%; } }
           #hero .main .left-column .lc-wrapper .lc-dots-wrapper .lc-dots-line {
             height: 50px;
             width: 4px;
@@ -361,6 +490,9 @@ body {
       align-items: center;
       justify-content: center;
       overflow: hidden; }
+      @media (max-width: 970px) {
+        #hero .main .right-column {
+          display: none; } }
       #hero .main .right-column:before {
         content: 'W';
         font-size: 395px;
