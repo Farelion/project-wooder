@@ -7,6 +7,7 @@ To do:</br>
   - RWD - adding Media Queries for below 768px </br>
   - mobile-menu lock scroll when open</br>
   - link buttons
+  - footer bg img <768px
   
   
   -Animations:</br>
