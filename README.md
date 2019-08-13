@@ -6,7 +6,7 @@ Work in progress
 To do:</br>
   - RWD - adding Media Queries for below 768px </br>
   - mobile-menu lock scroll when open</br>
-  - fix nav menu position in desktop mode
+  - link buttons
   
   
   -Animations:</br>
