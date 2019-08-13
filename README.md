@@ -5,6 +5,7 @@ Work in progress
 
 To do:</br>
   -RWD</br>
+  -add mobile menu
   
   -Animations:</br>
     -nav bar</br>
