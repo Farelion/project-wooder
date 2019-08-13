@@ -4,7 +4,7 @@ https://farelion.github.io/project-wooder/
 Work in progress
 
 To do:</br>
-  -RWD</br>
+  -RWD - adding Media Queries </br>
   -add mobile menu
   
   -Animations:</br>
