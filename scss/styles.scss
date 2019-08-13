@@ -3,6 +3,19 @@ $secondary-color: #BEA67C;
 $transparent-color:  rgba(169, 148, 110, 0.08);
 $primary-font-family: proxima-nova, sans-serif;
 
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == 768 {
+    @media (max-width: 768px) { @content; }
+  } @else if $size == 970 {
+    @media (max-width: 970px) { @content; }
+  } @else if $size == 1024 {
+    @media (max-width: 1024px) { @content; }
+  } @else if $size == 1400 {
+    @media screen and (max-width: 1400px){ @content; }
+  }
+}
 
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
     $easing: cubic-bezier(0.4, 0, 0.2, 1);
@@ -157,6 +170,7 @@ body{
 }
 
 #hero{
+  height: 1040px;
     .nav{
       z-index: 2;
       width:100%;
@@ -203,12 +217,30 @@ body{
           li{
             display: inline-flex;
             margin-left: 95px;
+            &:hover{
+              a{
+                transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);
+                background-position: 100% 100%;
+              }
+            }
             a{
               color: rgba(255, 255, 255, 0.5);
               font-size: 15px;
               font-weight: bold;
               letter-spacing: 0.025em;
               text-transform: uppercase;
+              text-decoration: none;
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              transition: all 0.4s ease-out;
+              background-image: linear-gradient(
+                  0deg,
+                  $secondary-color,
+                  $secondary-color 50%,
+                  rgba(255, 255, 255, 0.5) 50%);
+                  background-size: 100% 200%;
+                  background-position: 0% 0%;
             }
           }
         }
@@ -243,6 +275,22 @@ body{
           justify-content: center;
           align-items: center;
           cursor: pointer;
+          text-decoration: none;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: all 0.4s ease-out;
+          background-image: linear-gradient(
+              0deg,
+              $secondary-color,
+              $secondary-color 50%,
+              rgba(255, 255, 255, 0.5) 50%);
+              background-size: 100% 200%;
+              background-position: 0% 0%;
+          &:hover{
+            transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);
+            background-position: 100% 100%;
+          }
           .nav-lang-arrow{
             height: 4px;
             width: 6px;
@@ -259,6 +307,8 @@ body{
     .main{
         display: flex;
         flex-wrap: wrap;
+        height:100%;
+        width: 100%;
         .center-column-wrapper{
             height:100%;
             width:100%;
@@ -326,45 +376,74 @@ body{
                 }
                 .cc-scroll{
                   margin-top: 65px;
-                  .cc-scroll-img{
-                    cursor: pointer; 
-                    display:block;
-                    height: 30px;
-                    width: 20px;
-                    background-image: url("/project-wooder/img/mouse-icon.png");
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;  
-                  }
-                  .cc-scroll-arrow{
-                    cursor: pointer; 
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    margin-left: 4px;
-                    display:block;
-                    height: 74px;
-                    width: 11px;
-                    background-image: url("/project-wooder/img/arrow-down.png");
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;  
-                  }
-                  .cc-scroll-text-wrapper{ 
-                      display:block;
-                      color: rgba(255, 255, 255, 0.2);
-                      font-weight: bold;
-                      font-size: 14px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.1em;
-                      div{
-                        cursor: pointer; 
-                        margin-left:17px;
-                        transform: rotate(90deg);
-                        transform-origin: top left;
-                        display: inline-block;
-                        position: relative;
+                  .cc-scroll-wrapper{
+                    display: inline-block;
+                    width: 50px;
+                    height: 100%;
+                    &:hover{
+                      .cc-scroll-img{
+                        top: 25px;
+                        transition: 0.3s ease-out;
+                      }
+                      .cc-scroll-arrow{
+                        top: 15px;
+                        transition: 0.3s ease-out;
+                      }
+                      .cc-scroll-text-wrapper{
+                        div{
+                          transform: rotate(0deg);
+                          margin-left: 0;
+                          transition: 0.3s ease-out;
+                        }
                       }
                     }
+                    .cc-scroll-img{
+                      position: relative;
+                      top: 0;
+                      cursor: pointer; 
+                      display: block;
+                      height: 30px;
+                      width: 20px;
+                      background-image: url("/project-wooder/img/mouse-icon.png");
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-size: cover;  
+                      margin-bottom: 20px;
+                      transition: 0.3s ease-out;
+                    }
+                    .cc-scroll-arrow{
+                      position: relative;
+                      top: 0;
+                      cursor: pointer; 
+                      margin-bottom: 20px;
+                      margin-left: 4px;
+                      display:block;
+                      height: 74px;
+                      width: 11px;
+                      background-image: url("/project-wooder/img/arrow-down.png");
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-size: cover;  
+                      transition: 0.3s ease-out;
+                    }
+                    .cc-scroll-text-wrapper{ 
+                        display: inline-block;
+                        color: rgba(255, 255, 255, 0.2);
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        div{
+                          cursor: pointer; 
+                          margin-left:17px;
+                          transform: rotate(90deg);
+                          transition: 0.3s ease-out;
+                          transform-origin: top left;
+                          display: inline-block;
+                          position: relative;
+                        }
+                      }
+                  }
                 }
             }
         }
@@ -374,8 +453,8 @@ body{
             display: flex;
             flex-direction:column;
             width: 55%;
-            height: 95vh;
-            background-image: url("/project-wooder/img/left.png");
+            height: 95%;
+            background-image: url("/project-wooder/img/left.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -433,13 +512,14 @@ body{
             display: flex;
             position: relative;
             width: 45%;
-            height: 100vh;
-            background-image: url("/project-wooder/img/right.png");
+            height:100%;
+            background-image: url("/project-wooder/img/right.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
             &:before{
                 content: 'W';
                 font-size: 395px;
@@ -448,15 +528,6 @@ body{
                 position: absolute;
                 right: -200px;
 
-            }
-            &:after{
-                content: '';
-                position: absolute;
-                bottom: -26px;
-                right: 40%;
-                width: 4px;
-                height: 51px;
-                background-color: $secondary-color;
             }
             .rc-center-text{
                 font-size: 14px;
@@ -492,6 +563,16 @@ body{
     width: 100vw;
     display: flex;
     justify-content: center;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      top: -26px;
+      right: 18%;
+      width: 4px;
+      height: 51px;
+      background-color: #BEA67C;
+    }
     .furniture-wrapper{
       margin-top: 90px;
       padding-bottom: 105px;
@@ -499,6 +580,10 @@ body{
       width: 1600px;
       display: flex;
       position: relative;
+      @include for-size(1400) {    
+        flex-direction: column;
+        height: 100%;
+     }
       &:after{
         content: '';
         position: absolute;
@@ -507,6 +592,9 @@ body{
         width: 4px;
         height: 51px;
         background-color: #BEA67C;
+        @include for-size(1400) {    
+          left: calc( 30% + 19px);
+       }
       }
       .fur-left-column{
         flex-grow: 1;
@@ -515,6 +603,13 @@ body{
         justify-content: center;
         align-items: center;
         position: relative;
+        @include for-size(1400) {    
+          order: 2;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin-top: 50px;
+       }
         &:after{
           content: '';
           position: absolute;
@@ -529,6 +624,12 @@ body{
           display: flex;
           flex-direction: column;
           margin-right: 45px;
+          @include for-size(1400) {
+            width: 45%;
+          }
+          @include for-size(1024) {
+            width: 67%;
+          }
           .fur-lc-head{
             width: 100%;
             display: flex;
@@ -719,6 +820,12 @@ body{
       .fur-right-column{
         flex-grow: 1;
         width:50%;
+        @include for-size(1400) {    
+          order: 1;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+       }
         .fur-rc-img{
           position: relative;
           width:617px;
@@ -758,6 +865,10 @@ body{
     width: 1600px;
     display: flex;
     position: relative;
+    @include for-size(1400) {    
+      flex-direction: column;
+      height: 100%;
+   }
     &:after{
       content: '';
       position: absolute;
@@ -766,6 +877,9 @@ body{
       width: 4px;
       height: 51px;
       background-color: #BEA67C;
+      @include for-size(1400) {    
+        left: calc( 70% + 19px);
+     }
     }
     .dec-right-column{
       flex-grow: 1;
@@ -774,6 +888,13 @@ body{
       justify-content: center;
       align-items: center;
       position: relative;
+      @include for-size(1400) {    
+        order: 2;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 50px;
+     }
       &:after{
         content: '';
         position: absolute;
@@ -781,6 +902,7 @@ body{
         left: 40%;
         width: 130px;
         height: 55px;
+        
       }
       .dec-rc-wrapper{
         width: 100%;
@@ -788,6 +910,12 @@ body{
         display: flex;
         flex-direction: column;
         margin-left: 45px;
+        @include for-size(1400) {
+          width: 45%;
+          }
+          @include for-size(1024) {
+            width: 67%;
+          }
         .dec-rc-head{
           width: 100%;
           display: flex;
@@ -982,6 +1110,12 @@ body{
       width:50%;
       display: flex;
       justify-content: flex-end;
+      @include for-size(1400) {    
+        order: 1;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+     }
       .dec-lc-img{
         position: relative;
         width:617px;
@@ -1011,11 +1145,11 @@ body{
 #quality{
   margin-top:115px;
   width:100vw;
-  height:700px;
+  min-height:700px;
   display: flex;
   justify-content: center;
   .quality-wrapper{
-    height: 550px;
+    min-height: 550px;
     width: 960px;
     display: flex;
     flex-direction: column;
@@ -1063,13 +1197,22 @@ body{
     }
     .q-bottom{
       width: 100%;
-      height: 325px;
+      min-height: 325px;
       margin-top: 75px;
       display: flex;
+      @include for-size(768) {    
+        flex-direction: column;
+        margin-top: 40px;
+        margin-bottom: 50px;
+     }
       .q-bottom-video-item{
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        @include for-size(768) {    
+
+          margin-bottom: 25px;
+       }
         .video-item-img{
           height: 280px;
           display: flex;
@@ -1141,6 +1284,9 @@ body{
         }
         .video-item-text{
           text-align:center;
+          @include for-size(768) {    
+            margin-top: 15px;
+         }
           span{
             font-size: 16px;
             letter-spacing: 0.025em;
@@ -1155,7 +1301,7 @@ body{
 #video{
   height: 915px;
   width: 100vw;
-  background-image: url("/project-wooder/img/video-bg.png");
+  background-image: url("/project-wooder/img/video-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; 
@@ -1179,24 +1325,37 @@ body{
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover; 
+      @include for-size(1400) {
+        margin: auto;
+      }
+      @include for-size(970) {
+        width: 665px;
+        height: 632px;
+      }
     }
   }
   .video-wrapper{
     z-index: 1;
     height: 736px;
-    width: 1560px;
+    width: 85%;
     border: 1px solid $secondary-color;
     display: flex;
     .video-left-column{
       width: 60%;
       display: flex;
       justify-content: center;
+      @include for-size(1400) {
+        width: 100%;
+      }
       .fur-lc-wrapper{
         width: 100%;
         height: 225px;
         margin-top: 200px;
         display: flex;
         flex-direction: column;
+        @include for-size(1400) {
+          margin-top: 25%;
+        }
         .fur-lc-head{
           width: 100%;
           display: flex;
@@ -1227,6 +1386,9 @@ body{
               letter-spacing: 0.07em;
               text-transform: uppercase;
               color: $secondary-color;
+              @include for-size(970) {
+                font-size: 38px;
+              }
             }
           }
         }
@@ -1235,6 +1397,9 @@ body{
           display: flex;
           flex-grow: 1;
           margin-top: 50px;
+          @include for-size(970) {
+            margin-top: 20px;
+          }
           .fur-lc-content-left{
             flex-grow: 1;
             width:39%;
@@ -1253,6 +1418,9 @@ body{
             flex-grow: 1;
             width:61%;
             padding-right: 151px;
+            @include for-size(970) {
+              padding-right: 50px;
+            }
             span{
               font-size: 15px;
               letter-spacing: 0.025em;
@@ -1280,6 +1448,9 @@ body{
               display: inline-flex;
               align-items: center;
               justify-content: center;
+              @include for-size(970) {
+                padding: 17px 42px;
+              }
               &:hover{
                 span{
                   transition: all 0.7s cubic-bezier(0.000, 0.000, 0.230, 1);
@@ -1329,6 +1500,9 @@ body{
       align-items: center;
       flex-direction: row;
       justify-content: flex-end;
+      @include for-size(1400) {
+        width: auto;
+      }
       .video-rc-line{
         position: relative;
         display:flex;
@@ -1353,11 +1527,22 @@ body{
   align-items: center;
   justify-content: center;
   display: flex;
-
+  @include for-size(1400) {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .about-us-wrapper-img{
     position: absolute;
     width: 1125px;
     z-index: 1;
+    @include for-size(1400) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: static;
+      }
     .as-img{
       height: 400px;
       width: 589px;
@@ -1385,18 +1570,43 @@ body{
     width: 850px;
     z-index: 2;
     display: flex;
+    @include for-size(1024) {
+      width: 85%;
+    }
     .about-us-left-column{
       flex-grow: 1;
       width: 50%;
+      @include for-size(1400) {
+        flex-grow: 0;
+        width: 0%;
+      }
     }
     .about-us-right-column{
       flex-grow: 1;
+      @include for-size(1400) {    
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 50px;
+     }
       .fur-lc-wrapper{
         width: 100%;
         height: 225px;
         display: flex;
         flex-direction: column;
         margin-right: 45px;
+        @include for-size(1400) {
+          width: 75%;
+        }
+        @include for-size(1024) {
+          width: 67%;
+        }
+        @include for-size(970){
+          width: 85%;
+        }
+        @include for-size(768){
+          width: 100%;
+        }
         .fur-lc-head{
           width: 100%;
           display: flex;
@@ -1573,20 +1783,36 @@ body{
 #footer{
   height: 68px;
   width: 100vw;
-  background-image: url("/project-wooder/img/footer-bg.png");
+  background-image: url("/project-wooder/img/footer-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover; 
+  @include for-size(768) {
+    height: 204px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  } 
   .footer-wrapper{
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
+    @include for-size(768) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 85%;
+    } 
     .ft-left{
       width: 33%;
       display: flex;
       align-items: center;
       justify-content: center;
+      @include for-size(768) {
+        height: 33%;
+        width: 100%;
+      } 
       span{
         font-size: 15px;
         letter-spacing: 0.025em;
@@ -1601,6 +1827,10 @@ body{
       display: flex;
       align-items: center;
       justify-content: center;
+      @include for-size(768) {
+        height: 33%;
+        width: 100%;
+      } 
       .ft-logo{
         color: white;
         font-size: 36px;
@@ -1628,6 +1858,10 @@ body{
       display: flex;
       align-items: center;
       justify-content: center;
+      @include for-size(768) {
+        height: 33%;
+        width: 100%;
+      } 
       span{
         font-size: 15px;
         letter-spacing: 0.025em;

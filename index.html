@@ -8,7 +8,7 @@
   <meta name="description" content="Project Wooder">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,9 +19,9 @@
         <div class="nav-center">
             <div class="nav-logo"><span>wooder</span></div>
             <div class="nav-menu"><ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="">PRODUCTS</a></li>
-                <li><a href="">ABOUT</a></li>
+                <li><a href="#nav">HOME</a></li>
+                <li><a href="#furniture">PRODUCTS</a></li>
+                <li><a href="#about-us">ABOUT</a></li>
             </ul></div>
         </div>
         <div class="nav-right">
@@ -43,9 +43,11 @@
                     </span>
                 </a>
                 <div class="cc-scroll">
-                    <div class="cc-scroll-img"></div>
-                    <div class="cc-scroll-arrow"></div>
-                    <div class="cc-scroll-text-wrapper"><div>scroll</div></div>
+                    <a href="#furniture" class="cc-scroll-wrapper">
+                        <div class="cc-scroll-img"></div>
+                        <div class="cc-scroll-arrow"></div>
+                        <div class="cc-scroll-text-wrapper"><div>scroll</div></div>
+                    </a>
                 </div>      
             </div>
         </div>
@@ -256,6 +258,7 @@
     </div>
 </section>
 
+  <script src="js/smooth-scroll.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
