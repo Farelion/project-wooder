@@ -321,7 +321,7 @@ body{
         text-transform: uppercase;
         margin-left: 295px;
         position: relative;
-        @include for-size(1024) {    
+        @include for-size(1250) {    
           margin-left: 0;
        }
         span{
@@ -340,7 +340,9 @@ body{
       }
       .nav-menu{
         z-index: 2;
-        width: 30%;
+        @include for-size(1400) {    
+          width: 51%;
+       }
         @include for-size(1250) {    
           display: none;
        }

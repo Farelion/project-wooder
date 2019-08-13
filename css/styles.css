@@ -132,7 +132,7 @@ body {
         text-transform: uppercase;
         margin-left: 295px;
         position: relative; }
-        @media (max-width: 1024px) {
+        @media (max-width: 1250px) {
           #hero .nav .nav-center .nav-logo {
             margin-left: 0; } }
         #hero .nav .nav-center .nav-logo span {
@@ -147,8 +147,10 @@ body {
             top: 18px;
             left: 47px; }
       #hero .nav .nav-center .nav-menu {
-        z-index: 2;
-        width: 30%; }
+        z-index: 2; }
+        @media screen and (max-width: 1400px) {
+          #hero .nav .nav-center .nav-menu {
+            width: 51%; } }
         @media (max-width: 1250px) {
           #hero .nav .nav-center .nav-menu {
             display: none; } }
