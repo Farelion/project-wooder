@@ -8,6 +8,5 @@ To do:</br>
   -add mobile menu
   
   -Animations:</br>
-    -nav bar</br>
     -left column to carousel with imgs</br>
     -more?</br>
