@@ -12,4 +12,3 @@ To do:</br>
   -Animations:</br>
     - mobile-menu text animations </br> 
     - left column to carousel with imgs</br>
-    - more?</br>
