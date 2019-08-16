@@ -4,8 +4,10 @@ $transparent-color:  rgba(169, 148, 110, 0.08);
 $primary-font-family: proxima-nova, sans-serif;
 
 @mixin for-size($size) {
-  @if $size == phone-only {
-    @media (max-width: 599px) { @content; }
+  @if $size == 375 {
+    @media (max-width: 375px) { @content; }
+  } @else if $size == 425 {
+    @media (max-width: 680px) { @content; }
   } @else if $size == 768 {
     @media (max-width: 768px) { @content; }
   } @else if $size == 970 {
@@ -396,6 +398,7 @@ body{
           background-size: cover;  
           display: inline-flex;
           cursor: pointer;
+          display: none;
         }
         .nav-lang{
           color: rgba(255, 255, 255, 0.5);
@@ -419,8 +422,9 @@ body{
               $secondary-color,
               $secondary-color 50%,
               rgba(255, 255, 255, 0.5) 50%);
-              background-size: 100% 200%;
-              background-position: 0% 0%;
+          background-size: 100% 200%;
+          background-position: 0% 0%;
+          display: none;
           &:hover{
             transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);
             background-position: 100% 100%;
@@ -487,6 +491,12 @@ body{
                     text-transform: uppercase;
                     margin-bottom: 50px;
                     user-select: none;
+                    @include for-size(425) {    
+                      font-size: 65px;
+                   }
+                   @include for-size(375) {    
+                    font-size: 50px;
+                 }
                 }
                 a {
                     color: white;
@@ -496,6 +506,14 @@ body{
                     letter-spacing: 0.2em;
                     width: 300px;
                     height: 55px;
+                    @include for-size(970) {
+                      width: 250px;
+                      height:35px;
+                    }
+                    @include for-size(375) {
+                      width: 233px;
+                      height:51px;
+                    }
                 }
                 .cc-button {
                     @include btn-border-slide(white, $secondary-color, 2px, 0.8s);
@@ -753,6 +771,9 @@ body{
         flex-direction: column;
         height: 100%;
      }
+     @include for-size(425) {    
+      padding-bottom: 75px;
+    }
       &:after{
         content: '';
         position: absolute;
@@ -763,6 +784,9 @@ body{
         background-color: #BEA67C;
         @include for-size(1400) {    
           left: calc( 30% + 19px);
+       }
+       @include for-size(425) {    
+        left: calc( 50% + -7px);
        }
       }
       .fur-left-column{
@@ -779,6 +803,9 @@ body{
           width: 100%;
           margin-top: 50px;
        }
+       @include for-size(425) {    
+        flex-direction: column;
+        }
         &:after{
           content: '';
           position: absolute;
@@ -799,6 +826,9 @@ body{
           @include for-size(1024) {
             width: 67%;
           }
+          @include for-size(425) {    
+            margin-right:0;
+        }
           .fur-lc-head{
             width: 100%;
             display: flex;
@@ -809,6 +839,9 @@ body{
               position: relative;
               display: flex;
               align-items: center;
+              @include for-size(425) {    
+                display: none;
+             }
               span{
                 content: '';
                 position: absolute;
@@ -823,12 +856,19 @@ body{
               width:50%;
               display: flex;
               align-items: center;
+              @include for-size(425) {    
+                width: 100%;
+                justify-content: center;
+             }
               span{
                 font-size: 48px;
                 font-weight: bold;
                 letter-spacing: 0.07em;
                 text-transform: uppercase;
                 color: black;
+                @include for-size(425) {    
+                  font-size: 36px;
+              }
               }
             }
           }
@@ -840,6 +880,9 @@ body{
               flex-grow: 1;
               width:50%;
               position: relative;
+              @include for-size(425) {    
+                display:none;
+             }
               span{
                 content: '';
                 position: absolute;
@@ -853,12 +896,18 @@ body{
             .fur-lc-content-right{
               flex-grow: 1;
               width:50%;
-
+              @include for-size(425) {    
+                width: 100%;
+                text-align: center;
+             }
               span{
                 font-size: 15px;
                 letter-spacing: 0.025em;
                 color: #464646;
                 line-height: 1.75;
+                @include for-size(425) {    
+                  font-size: 14px;
+              }
               }
             }
           }
@@ -870,10 +919,17 @@ body{
               flex-grow: 1;
               width:50%;
               position: relative;
+              @include for-size(425) {    
+                display: none;
+             }
             }
             .fur-lc-button-right{
               flex-grow: 1;
               width:50%;
+              @include for-size(425) {    
+                width: 100%;
+                text-align: center;
+             }
               .fur-lc-button-text{
                 display: inline-flex;
                 position: relative;
@@ -972,16 +1028,25 @@ body{
           position: absolute;
           bottom: 0;
           left: 30%;
+          @include for-size(425) {    
+            position: static;
+         }
           .fur-number-wrapper{
             font-size: 36px;
             font-weight: bold;
             letter-spacing: 0.075em;
             color: black;
+             @include for-size(425) {    
+                font-size: 28px;
+              }
             span{
               font-size: 36px;
               font-weight: bold;
               letter-spacing: 0.075em;
               color: $secondary-color;
+              @include for-size(425) {    
+                font-size: 28px;
+              }
             }
           }
         }
@@ -1005,6 +1070,9 @@ body{
           background-size: cover;  
           box-shadow: 0px 0px 14.56px 1.44px rgba(0, 0, 0, 0.25); 
           overflow: hidden;
+          @include for-size(425) {    
+            width: 90%;
+         }
           .fur-rc-text{
             position: absolute;
             right: -708px;
@@ -1038,6 +1106,9 @@ body{
       flex-direction: column;
       height: 100%;
    }
+   @include for-size(425) {    
+    padding-bottom: 75px;
+  }
     &:after{
       content: '';
       position: absolute;
@@ -1048,6 +1119,9 @@ body{
       background-color: #BEA67C;
       @include for-size(1400) {    
         left: calc( 70% + 19px);
+     }
+     @include for-size(425) {    
+      left: calc( 50% + -7px);
      }
     }
     .dec-right-column{
@@ -1064,6 +1138,9 @@ body{
         width: 100%;
         margin-top: 50px;
      }
+     @include for-size(425) {    
+      flex-direction: column;
+      }
       &:after{
         content: '';
         position: absolute;
@@ -1085,6 +1162,9 @@ body{
           @include for-size(1024) {
             width: 67%;
           }
+          @include for-size(425) {    
+            margin-left:0;
+        }
         .dec-rc-head{
           width: 100%;
           display: flex;
@@ -1095,6 +1175,9 @@ body{
             position: relative;
             display: flex;
             align-items: center;
+            @include for-size(425) {    
+              display: none;
+           }
             span{
               content: '';
               position: absolute;
@@ -1110,12 +1193,19 @@ body{
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            @include for-size(425) {    
+              width: 100%;
+              justify-content: center;
+           }
             span{
               font-size: 48px;
               font-weight: bold;
               letter-spacing: 0.07em;
               text-transform: uppercase;
               color: black;
+              @include for-size(425) {    
+                font-size: 36px;
+             }
             }
           }
         }
@@ -1127,6 +1217,9 @@ body{
             flex-grow: 1;
             width:50%;
             position: relative;
+            @include for-size(425) {    
+              display:none;
+           }
             span{
               content: '';
               position: absolute;
@@ -1141,11 +1234,18 @@ body{
             flex-grow: 1;
             width:50%;
             text-align: right;
+            @include for-size(425) {    
+              width: 100%;
+              text-align: center;
+           }
             span{
               font-size: 15px;
               letter-spacing: 0.025em;
               color: #464646;
               line-height: 1.75;
+              @include for-size(425) {    
+                font-size: 14px;
+           }
             }
           }
         }
@@ -1157,11 +1257,18 @@ body{
             flex-grow: 1;
             width:50%;
             position: relative;
+            @include for-size(425) {    
+              display: none;
+           }
           }
           .dec-rc-button-left{
             text-align: right;
             flex-grow: 1;
             width:50%;
+            @include for-size(425) {    
+              width: 100%;
+              text-align: center;
+           }
             .dec-rc-button-text{
               display: inline-flex;
               position: relative;
@@ -1260,16 +1367,25 @@ body{
         position: absolute;
         bottom: 0;
         left: 70%;
+        @include for-size(425) {    
+          position: static;
+       }
         .dec-number-wrapper{
           font-size: 36px;
           font-weight: bold;
           letter-spacing: 0.075em;
           color: black;
+          @include for-size(425) {    
+            font-size: 28px;
+          }
           span{
             font-size: 36px;
             font-weight: bold;
             letter-spacing: 0.075em;
             color: $secondary-color;
+            @include for-size(425) {    
+              font-size: 28px;
+            }
           }
         }
       }
@@ -1295,6 +1411,9 @@ body{
         background-size: cover;  
         box-shadow: 0px 0px 14.56px 1.44px rgba(0, 0, 0, 0.25); 
         overflow: hidden;
+        @include for-size(425) {    
+          width: 90%;
+       }
         .dec-lc-text{
           position: absolute;
           left: -382px;
@@ -1332,11 +1451,17 @@ body{
        flex-grow: 1;
        display: flex;
        align-items: center;
+       @include for-size(425) {    
+       text-align: center;
+    }
        span{
         font-size: 48px;
         font-weight: bold;
         text-transform: uppercase;
         color:  black;
+        @include for-size(425) {    
+            font-size: 32px;
+        }
        }
       }
       .q-top-line{
@@ -1356,11 +1481,18 @@ body{
           display: flex;
           align-items: center;
           text-align: center;
+          @include for-size(425) {    
+            width: 90%;
+
+         }
         span{
           font-size: 15px;
           letter-spacing: 0.025em;
           line-height: 1.75;
           color:  #636262;
+          @include for-size(425) {    
+            font-size: 14px;
+       }
          }
        }
     }
@@ -1378,8 +1510,7 @@ body{
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        @include for-size(768) {    
-
+        @include for-size(768) {   
           margin-bottom: 25px;
        }
         .video-item-img{
@@ -1460,6 +1591,9 @@ body{
             font-size: 16px;
             letter-spacing: 0.025em;
             color:  black;
+            @include for-size(425) {    
+              font-size: 14px;
+         }
           }
         }
       }
@@ -1486,6 +1620,9 @@ body{
     align-items: center;
     flex-direction: row;
     justify-content: flex-end;
+    @include for-size(425) {    
+      display:none;
+   }
     .video-play-img-bg{
       margin-right:110px;
       height: 832px;
@@ -1525,6 +1662,9 @@ body{
         @include for-size(1400) {
           margin-top: 25%;
         }
+        @include for-size(425) {    
+          margin-right:0;
+      }
         .fur-lc-head{
           width: 100%;
           display: flex;
@@ -1534,6 +1674,9 @@ body{
             width:39%;
             position: relative;
             display: flex;
+            @include for-size(425) {    
+              display: none;
+           }
             span{
               content: '';
               position: absolute;
@@ -1549,6 +1692,12 @@ body{
             width:61%;
             display: flex;
             align-items: center;
+            @include for-size(425) {    
+              width: 100%;
+              justify-content: center;
+              text-align: center;
+
+           }
             span{
               font-size: 48px;
               font-weight: bold;
@@ -1558,6 +1707,10 @@ body{
               @include for-size(970) {
                 font-size: 38px;
               }
+              @include for-size(425) {    
+                font-size: 36px;
+                padding: 0 5px ;
+            }
             }
           }
         }
@@ -1573,6 +1726,9 @@ body{
             flex-grow: 1;
             width:39%;
             position: relative;
+            @include for-size(425) {    
+              display:none;
+           }
             span{
               content: '';
               position: absolute;
@@ -1590,11 +1746,19 @@ body{
             @include for-size(970) {
               padding-right: 50px;
             }
+            @include for-size(425) {    
+              width: 100%;
+              text-align: center;
+              padding: 5px;
+           }
             span{
               font-size: 15px;
               letter-spacing: 0.025em;
               color: white;
               line-height: 1.75;
+              @include for-size(425) {    
+                font-size: 14px;
+           }
             }
           }
         }
@@ -1607,10 +1771,17 @@ body{
             flex-grow: 1;
             width:39%;
             position: relative;
+            @include for-size(425) {    
+              display: none;
+           }
           }
           .fur-lc-button-right{
             flex-grow: 1;
             width:61%;
+            @include for-size(425) {    
+              width: 100%;
+              text-align: center;
+           }
             .cc-button {
               @include btn-border-slide(white, $secondary-color, 2px, 0.8s);
               padding: 17px 62px;
@@ -1619,6 +1790,9 @@ body{
               justify-content: center;
               @include for-size(970) {
                 padding: 17px 42px;
+              }
+              @include for-size(375) {
+                padding: 13px 28px;
               }
               &:hover{
                 span{
@@ -1672,6 +1846,9 @@ body{
       @include for-size(1400) {
         width: auto;
       }
+      @include for-size(425) {    
+        display: none;
+     }
       .video-rc-line{
         position: relative;
         display:flex;
@@ -1691,7 +1868,7 @@ body{
 
 
 #about-us{
-  height: 665px;
+  min-height: 665px;
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -1722,6 +1899,9 @@ body{
       box-shadow: 0px 0px 14.56px 1.44px rgba(0, 0, 0, 0.15); 
       overflow: hidden;
       position: relative;
+      @include for-size(425) {    
+        width: 90%;
+     }
       .dec-lc-text{
         position: absolute;
         left: -382px;
@@ -1776,6 +1956,9 @@ body{
         @include for-size(768){
           width: 100%;
         }
+        @include for-size(425) {    
+          margin-right:0;
+      }
         .fur-lc-head{
           width: 100%;
           display: flex;
@@ -1786,6 +1969,9 @@ body{
             position: relative;
             display: flex;
             align-items: center;
+            @include for-size(425) {    
+              display: none;
+           }
             span{
               content: '';
               position: absolute;
@@ -1800,12 +1986,20 @@ body{
             width:50%;
             display: flex;
             align-items: center;
+            @include for-size(425) {    
+              width: 100%;
+              justify-content: center;
+           }
             span{
               font-size: 48px;
               font-weight: bold;
               letter-spacing: 0.07em;
               text-transform: uppercase;
               color: black;
+              @include for-size(425) {    
+                font-size: 36px;
+                
+              }
             }
           }
         }
@@ -1817,6 +2011,9 @@ body{
             flex-grow: 1;
             width:50%;
             position: relative;
+            @include for-size(425) {    
+              display:none;
+           }
             span{
               content: '';
               position: absolute;
@@ -1830,12 +2027,18 @@ body{
           .fur-lc-content-right{
             flex-grow: 1;
             width:50%;
-
+            @include for-size(425) {    
+              width: 100%;
+              text-align: center;
+           }
             span{
               font-size: 15px;
               letter-spacing: 0.025em;
               color: #464646;
               line-height: 1.75;
+              @include for-size(425) {    
+                font-size: 14px;
+              }
             }
           }
         }
@@ -1847,10 +2050,17 @@ body{
             flex-grow: 1;
             width:50%;
             position: relative;
+            @include for-size(425) {    
+              display: none;
+           }
           }
           .fur-lc-button-right{
             flex-grow: 1;
             width:50%;
+            @include for-size(425) {    
+              width: 100%;
+              text-align: center;
+           }
             .fur-lc-button-text{
               display: inline-flex;
               position: relative;
