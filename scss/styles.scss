@@ -173,6 +173,10 @@ body{
   box-sizing: border-box;
 }
 
+.overflow-hidden{
+  overflow-x: hidden
+}
+
 #hero{
   height: 1040px;
     .nav{
@@ -267,6 +271,9 @@ body{
           transition: 0.5s ease;
           background-color: white;
           height: 100vh;
+          @include for-size(425) {    
+            width:100%;
+          }
           &.hidden {
             left: 0;
             top: 0;
