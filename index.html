@@ -8,7 +8,7 @@
   <meta name="description" content="Project Wooder">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 
 <body>
@@ -75,15 +75,17 @@
         </div>
 
         <div class="left-column">
+            <div class="hero-carousel">
+                <div class="first-slide"></div>
+                <div class="second-slide"></div>
+                <div class="third-slide"></div>
+                <div class="fourth-slide"></div>
+            </div>
             <div class="lc-wrapper">
                 <div class="lc-dots-wrapper">
                     <div class="lc-dots-line"></div>
                     <div class="lc-dots-number"><span>01</span></div>
-                    <div class="lc-dots">                    
-                        <div class="lc-single-dot"></div>
-                        <div class="lc-single-dot"></div>
-                        <div class="lc-single-dot"></div>
-                        <div class="lc-single-dot"></div>
+                    <div class="lc-dots">
                     </div>
                 </div>
             </div>
@@ -170,7 +172,7 @@
         <div class="q-bottom">
             <div class="q-bottom-video-item">
                 <div class="video-item-img">
-                    <a href="_blank" class="circle-img-wrapper">
+                    <a href="_blank" aria-label="video-img-first" class="circle-img-wrapper">
                         <div class="circle-img first-video-img"></div>
                         <div class="img-play-btn-border"></div>
                         <div class="img-play-btn"></div>
@@ -181,7 +183,7 @@
             </div>
             <div class="q-bottom-video-item">
                 <div class="video-item-img">
-                    <a href="_blank" class="circle-img-wrapper">
+                    <a href="_blank" aria-label="video-img-second" class="circle-img-wrapper">
                         <div class="circle-img second-video-img"></div>
                         <div class="img-play-btn-border"></div>
                         <div class="img-play-btn"></div>
@@ -192,7 +194,7 @@
             </div>
             <div class="q-bottom-video-item">
                 <div class="video-item-img">
-                    <a href="_blank" class="circle-img-wrapper">
+                    <a href="_blank" aria-label="video-img-third" class="circle-img-wrapper">
                         <div class="circle-img third-video-img"></div>
                         <div class="img-play-btn-border"></div>
                         <div class="img-play-btn"></div>
@@ -279,8 +281,10 @@
         <div class="ft-right"><span>Designed by <a href="https://www.behance.net/Olianishyn">Viacheslav Olianishyn</a></span></div>
     </div>
 </section>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/smooth-scroll.js"></script>
   <script src="js/mobile-menu.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

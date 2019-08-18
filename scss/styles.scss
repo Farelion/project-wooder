@@ -176,7 +176,7 @@ body{
 #hero{
   height: 1040px;
     .nav{
-      z-index: 2;
+      z-index: 5;
       width:100%;
       height: 80px;
       position: absolute;
@@ -448,7 +448,7 @@ body{
         height:100%;
         width: 100%;
         @include for-size(970){
-          background-image: url("/project-wooder/img/left.jpg");
+          background-image: url("/project-wooder/img/left-1.jpg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -626,16 +626,11 @@ body{
             }
         }
     
-
         .left-column {
             display: flex;
             flex-direction:column;
             width: 55%;
             height: 95%;
-            background-image: url("/project-wooder/img/left.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
             position: relative;
             @include for-size(970){
               display: none;
@@ -650,6 +645,30 @@ body{
                 width:130px;
                 height:55px;
             }
+            .hero-carousel{
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              div{
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+              }
+              div.first-slide{
+                background-image: url('/project-wooder/img/left-1.jpg');
+              }
+              div.second-slide{
+                background-image: url('/project-wooder/img/left-2.jpg');
+              }
+              div.third-slide{
+                background-image: url('/project-wooder/img/left-3.jpg');
+              }
+              div.fourth-slide{
+                background-image: url('/project-wooder/img/left-4.jpg');
+              }
+            }
             .lc-wrapper{
                 height:100%;
                 width: 100%;
@@ -662,6 +681,7 @@ body{
                     color: $secondary-color;
                     position: absolute;
                     left:40%;
+                    z-index: 3;
                     @include for-size(1400) {    
                       left: 25%;
                    }
@@ -677,16 +697,29 @@ body{
                     }
                     .lc-dots{
                         margin-top: 80px;
-                        .lc-single-dot{
+                        .slick-dots{
+                          padding: 0;
+                          margin: 0;
+                          list-style-type: none;
+                          li button{
+                            cursor: pointer;
+                            text-indent: -9999px;
                             height: 10px;
                             width: 10px;
                             background-color: #303030;
                             border-radius: 50%;
                             display: block;
                             margin-bottom:38px;
-                        }
-                        .lc-single-dot:nth-child(1){
+                            border:none;
+                            padding: 5px;
+                            &:focus{
+                              outline: none;
+                            }
+                          }
+                          
+                          li.slick-active button{
                             background-color: $secondary-color;
+                          }
                         }
                     }
                 }
