@@ -1,8 +1,8 @@
 
-https://farelion.github.io/project-wooder/
+###https://farelion.github.io/project-wooder/ </br>
 
-Non-commercial project.
+Non-commercial project. </br>
 
-PSD to HTML, SCSS, JS with jQuery
-Carousel - [Slick](https://kenwheeler.github.io/slick/)
-Animations on scroll  - [AOS](https://michalsnik.github.io/aos/)
+PSD to HTML, SCSS, JS with jQuery </br>
+Carousel - [Slick](https://kenwheeler.github.io/slick/) </br>
+Animations on scroll  - [AOS](https://michalsnik.github.io/aos/) </br>
