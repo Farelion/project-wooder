@@ -18,6 +18,9 @@ body {
 
 #hero {
   height: 1040px; }
+  @media (max-width: 680px) {
+    #hero {
+      height: 100vh; } }
   #hero .nav {
     z-index: 5;
     width: 100%;
@@ -141,6 +144,9 @@ body {
         @media (max-width: 1250px) {
           #hero .nav .nav-center .nav-logo {
             margin-left: 0; } }
+        @media (max-width: 375px) {
+          #hero .nav .nav-center .nav-logo {
+            display: none; } }
         #hero .nav .nav-center .nav-logo span {
           user-select: none; }
           #hero .nav .nav-center .nav-logo span:after {
@@ -264,12 +270,18 @@ body {
       justify-content: center;
       flex-direction: column;
       z-index: 1; }
+      @media (max-width: 680px) {
+        #hero .main .center-column-wrapper {
+          justify-content: flex-end; } }
       @media (max-width: 1024px) {
         #hero .main .center-column-wrapper .center-column {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center; } }
+      @media (max-width: 680px) {
+        #hero .main .center-column-wrapper .center-column {
+          margin-bottom: 80px; } }
       #hero .main .center-column-wrapper .center-column .cc-big-text {
         color: #BEA67C;
         font-size: 100px;
@@ -893,7 +905,8 @@ body {
         height: 100%; } }
     @media (max-width: 680px) {
       #decor .decor-wrapper {
-        padding-bottom: 75px; } }
+        padding-bottom: 75px;
+        margin-top: 50px; } }
     #decor .decor-wrapper:after {
       content: '';
       position: absolute;
@@ -1180,6 +1193,9 @@ body {
   min-height: 700px;
   display: flex;
   justify-content: center; }
+  @media (max-width: 680px) {
+    #quality {
+      margin-top: 50px; } }
   #quality .quality-wrapper {
     min-height: 550px;
     width: 960px;
@@ -1329,6 +1345,9 @@ body {
   justify-content: center;
   align-items: center;
   position: relative; }
+  @media (max-width: 680px) {
+    #video {
+      height: 100vh; } }
   #video .video-play-img-bg-wrapper {
     width: 100%;
     height: 100%;
@@ -1361,6 +1380,9 @@ body {
     width: 85%;
     border: 1px solid #BEA67C;
     display: flex; }
+    @media (max-width: 680px) {
+      #video .video-wrapper {
+        height: 85vh; } }
     #video .video-wrapper .video-left-column {
       width: 60%;
       display: flex;

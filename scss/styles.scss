@@ -179,6 +179,9 @@ body{
 
 #hero{
   height: 1040px;
+  @include for-size(425) {  
+    height: 100vh;
+  }
     .nav{
       z-index: 5;
       width:100%;
@@ -208,7 +211,7 @@ body{
         left: 25px;
         cursor: pointer;
         z-index: 3;
-        
+
         &.on {
           .one {
             transform: rotate(45deg) translate(7px, 7px);
@@ -333,6 +336,10 @@ body{
         @include for-size(1250) {    
           margin-left: 0;
        }
+       @include for-size(375) {    
+        display: none;
+      } 
+
         span{
           user-select: none;
           &:after{
@@ -483,6 +490,9 @@ body{
             justify-content: center;
             flex-direction: column;
             z-index: 1;
+            @include for-size(425) {   
+              justify-content: flex-end;
+             }
             .center-column{
               @include for-size(1024) {    
               display: flex;
@@ -490,6 +500,11 @@ body{
               justify-content: center;
               align-items: center;
               }
+              @include for-size(425) {   
+                margin-bottom: 80px;
+               }
+
+
                 .cc-big-text{
                     color: $secondary-color;
                     font-size: 100px;
@@ -1148,6 +1163,7 @@ body{
    }
    @include for-size(425) {    
     padding-bottom: 75px;
+    margin-top: 50px;
   }
     &:after{
       content: '';
@@ -1476,6 +1492,9 @@ body{
   min-height:700px;
   display: flex;
   justify-content: center;
+  @include for-size(425) {  
+    margin-top: 50px;
+  }
   .quality-wrapper{
     min-height: 550px;
     width: 960px;
@@ -1652,6 +1671,9 @@ body{
   justify-content: center;
   align-items: center;
   position: relative;
+  @include for-size(425) {  
+    height:100vh;
+  }
   .video-play-img-bg-wrapper{
     width: 100%;
     height: 100%;
@@ -1686,6 +1708,9 @@ body{
     width: 85%;
     border: 1px solid $secondary-color;
     display: flex;
+    @include for-size(425) {  
+      height: 85vh;
+    }
     .video-left-column{
       width: 60%;
       display: flex;
