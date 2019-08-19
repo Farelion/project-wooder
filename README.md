@@ -1,7 +1,8 @@
-# project-wooder
-https://farelion.github.io/project-wooder/
 
-Work in progress
+### [Live demo](https://farelion.github.io/project-wooder/) </br>
 
-To do:</br>
-  - adding Media Queries for below 425px </br>
+Non-commercial project. </br>
+
+PSD to HTML, SCSS, JS with jQuery </br>
+Carousel - [Slick](https://kenwheeler.github.io/slick/) </br>
+Animations on scroll  - [AOS](https://michalsnik.github.io/aos/) </br>
