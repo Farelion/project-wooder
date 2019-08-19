@@ -180,7 +180,7 @@ body{
 #hero{
   height: 1040px;
   @include for-size(425) {  
-    height: 100vh;
+    height: 568px;
   }
     .nav{
       z-index: 5;
@@ -1661,7 +1661,7 @@ body{
 }
 
 #video{
-  height: 915px;
+  min-height: 915px;
   width: 100vw;
   background-image: url("/project-wooder/img/video-bg.jpg");
   background-position: center;
@@ -1671,9 +1671,6 @@ body{
   justify-content: center;
   align-items: center;
   position: relative;
-  @include for-size(425) {  
-    height:100vh;
-  }
   .video-play-img-bg-wrapper{
     width: 100%;
     height: 100%;
@@ -1704,13 +1701,10 @@ body{
   }
   .video-wrapper{
     z-index: 1;
-    height: 736px;
+    min-height: 736px;
     width: 85%;
     border: 1px solid $secondary-color;
     display: flex;
-    @include for-size(425) {  
-      height: 85vh;
-    }
     .video-left-column{
       width: 60%;
       display: flex;
