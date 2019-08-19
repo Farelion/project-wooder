@@ -1,5 +1,5 @@
 
-### [Live version](https://farelion.github.io/project-wooder/) </br>
+### [Live demo](https://farelion.github.io/project-wooder/) </br>
 
 Non-commercial project. </br>
 
