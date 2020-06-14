@@ -1309,6 +1309,7 @@ body{
           width: 100%;
           display: flex;
           flex-grow: 1;
+          z-index: 5;
           .dec-rc-button-right{
             flex-grow: 1;
             width:50%;
@@ -1826,6 +1827,7 @@ body{
           display: flex;
           flex-grow: 1;
           margin-top: 40px;
+          z-index: 5;
           .fur-lc-button-left{
             flex-grow: 1;
             width:39%;
@@ -2105,6 +2107,7 @@ body{
           width: 100%;
           display: flex;
           flex-grow: 1;
+          z-index: 5;
           .fur-lc-button-left{
             flex-grow: 1;
             width:50%;
