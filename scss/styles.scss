@@ -27,7 +27,7 @@ $primary-font-family: proxima-nova, sans-serif;
     position: relative;
     padding: 0.5em 2em;
   
-    cursor: pointer;
+    cursor: pointer; 
     overflow: hidden;
   
     &:before,
@@ -590,6 +590,7 @@ body{
                         transition: 0.3s ease-out;
                       }
                       .cc-scroll-text-wrapper{
+                          pointer-events: none;
                         div{
                           transform: rotate(0deg);
                           margin-left: 0;
