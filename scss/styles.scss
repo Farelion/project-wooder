@@ -590,7 +590,6 @@ body{
                         transition: 0.3s ease-out;
                       }
                       .cc-scroll-text-wrapper{
-                          pointer-events: none;
                         div{
                           transform: rotate(0deg);
                           margin-left: 0;
@@ -634,6 +633,7 @@ body{
                         font-size: 14px;
                         text-transform: uppercase;
                         letter-spacing: 0.1em;
+                        pointer-events: none;
                         div{
                           cursor: pointer; 
                           margin-left:17px;

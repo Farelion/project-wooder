@@ -503,9 +503,6 @@ body {
   top: 15px;
   transition: 0.3s ease-out;
 }
-#hero .main .center-column-wrapper .center-column .cc-scroll .cc-scroll-wrapper:hover .cc-scroll-text-wrapper {
-  pointer-events: none;
-}
 #hero .main .center-column-wrapper .center-column .cc-scroll .cc-scroll-wrapper:hover .cc-scroll-text-wrapper div {
   transform: rotate(0deg);
   margin-left: 0;
@@ -547,6 +544,7 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  pointer-events: none;
 }
 #hero .main .center-column-wrapper .center-column .cc-scroll .cc-scroll-wrapper .cc-scroll-text-wrapper div {
   cursor: pointer;
